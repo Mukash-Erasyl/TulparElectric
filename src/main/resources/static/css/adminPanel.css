@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #100808;
+    color: #ffffff;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #fcd800;
+}
+
+.admin-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-links a {
+    background-color: #fcd800;
+    color: #100808;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: fit-content;
+    font-size: 18px;
+}
+
+.admin-links a:hover {
+    background-color: #100808;
+    color: #ffffff;
+    border: 1px solid #fcd800;
+}
+
+/* Список ссылок */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+li a {
+    color: #fcd800;
+    text-decoration: underline;
+}
+
+li a:hover {
+    color: #ffffff;
+}
+
+/* Форма */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fcd800;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #fcd800;
+    color: #100808;
+    padding: 14px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e0b800;
+}
+
+a {
+    color: #fcd800;
+    text-decoration: underline;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+.callButton {
+    background-color: #fcd800;
+    color: #100808;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.callButton:hover {
+    background-color: #100808;
+    color: white;
+}

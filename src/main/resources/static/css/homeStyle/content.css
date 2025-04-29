@@ -1,0 +1,225 @@
+/* Common styles for both desktop and mobile */
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.introducingBlog {
+    background-image: url('../../images/backdround1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    border-bottom: 2px solid white;
+}
+
+.blogInfo h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.blogInfo h2 span {
+    color: gold;
+}
+
+.blogInfo p,
+.additionalInfo {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.additionalInfoList div {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.additionalInfoList img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.applicationBlock {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.applicationBlock h3 {
+    font-size: 30px;
+    color: #fcd800;
+    font-weight: bold;
+}
+
+.applicationBlock p {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.applicationBlock button {
+    background-color: #fcd800;
+    color: #100808;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.applicationBlock button:hover {
+    background-color: #e0b800;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .introducingBlog {
+        padding: 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .blogContent {
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: left;
+        gap: 30px;
+    }
+
+    .blogInfo {
+        flex: 1;
+        margin-right: 20px;
+        text-align: left;
+    }
+
+    .blogInfo h2 {
+        text-align: left;
+    }
+
+    .additionalInfo {
+        flex: 1;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .additionalInfoList {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+
+    .additionalInfoList div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .additionalInfoList div:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .applicationBlock {
+        padding: 40px;
+        margin-top: 50px;
+        max-width: 400px;
+        flex: 0 0 400px;
+    }
+
+    .applicationBlock h3 {
+        margin-bottom: 20px;
+    }
+
+    .applicationBlock p {
+        margin-bottom: 30px;
+    }
+
+    .applicationBlock button {
+        padding: 15px 30px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .introducingBlog {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .blogContent {
+        text-align: center;
+    }
+
+    .blogInfo {
+        text-align: center;
+    }
+
+    .blogInfo h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .blogInfo p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .additionalInfo {
+        font-size: 16px;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .additionalInfoList {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .additionalInfoList div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.05);
+        transition: background-color 0.2s ease;
+    }
+
+    .additionalInfoList div:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+    }
+
+    .applicationBlock {
+        padding: 20px;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .applicationBlock h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .applicationBlock p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .applicationBlock button {
+        padding: 12px 20px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,162 @@
+/* Common styles for both desktop and mobile */
+.orderStages {
+    background-color: #100808;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 2px solid white;
+}
+
+.orderStageTitleText {
+    font-weight: 600;
+    color: #fcd800; /* Желтый акцент */
+}
+
+.orderStageItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.orderStageItem {
+    background: #1a1a1a;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+    word-wrap: break-word;
+}
+
+.orderStageItem:hover {
+    transform: translateY(-5px);
+}
+
+.stageItemLogo img {
+    object-fit: contain;
+}
+
+.stageItemTexts {
+    text-align: center;
+}
+
+.stageItemText:first-child {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.stageItemText:last-child {
+    color: #cccccc;
+}
+
+.stageItemHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stageItemNumber {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .orderStages {
+        padding: 40px 20px;
+    }
+
+    .orderStageTitleText {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .orderStageItems {
+        gap: 30px;
+    }
+
+    .orderStageItem {
+        padding: 20px;
+        width: 300px;
+    }
+
+    .stageItemLogo img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .stageItemText:first-child {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .stageItemText:last-child {
+        font-size: 15px;
+    }
+
+    .stageItemHeader {
+        margin-bottom: 15px;
+    }
+
+    .stageItemNumber {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .orderStages {
+        padding: 20px 10px;
+    }
+
+    .orderStageTitleText {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .orderStageItems {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .orderStageItem {
+        padding: 15px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .stageItemLogo img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .stageItemText:first-child {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .stageItemText:last-child {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .stageItemHeader {
+        margin-bottom: 10px;
+    }
+
+    .stageItemNumber {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+    }
+}

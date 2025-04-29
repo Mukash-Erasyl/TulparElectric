@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16914391771"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16914391771');
+    </script>
+
+    <!-- Фрагмент кода с номером телефона -->
+    <script>
+        gtag('config', 'AW-16914391771', {
+            'phone_conversion_number': '+7 707 363 0677'
+        });
+    </script>
+    <title>Доступ ограничен</title>
+</head>
+<body>
+<h1>Подозрительная активность обнаружена!</h1>
+<p>Ваш IP: <span th:text="${ip}"></span> временно заблокирован.</p>
+<p>Если это ошибка, свяжитесь с поддержкой.</p>
+</body>
+</html>

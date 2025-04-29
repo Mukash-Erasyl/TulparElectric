@@ -1,0 +1,243 @@
+.subHeader {
+    background-color: #fcd800;
+    color: #100808;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+.subHeaderItem {
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #100808;
+    transition: all 0.3s ease;
+}
+
+.subHeaderItem:hover {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.subHeaderItem.active {
+    color: #ffffff;
+    opacity: 1;
+}
+
+#main {
+    color: white;
+    opacity: 0.8;
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #333333;
+    color: #fcd800;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .subHeader {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 120px;
+    }
+
+    .subHeaderItem {
+        padding: 10px;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #1a1a1a;
+        min-width: 200px;
+        z-index: 100;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        padding: 10px;
+        border-radius: 6px;
+        top: 100%;
+        left: 0;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 8px 12px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .mobile-menu-button,
+    .mobile-menu-close {
+        display: none;
+    }
+    
+}
+
+
+
+@media (max-width: 767px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .subHeader.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .subHeader {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100%;
+        background: linear-gradient(180deg, #fcd800 0%, #2c2c2c 100%);
+        z-index: 1000;
+        box-shadow: 4px 0 12px rgba(0,0,0,0.3);
+        padding: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .subHeaderItem {
+        padding: 15px 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        color: #1a1a1a;
+        font-size: 16px;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.2s ease;
+    }
+
+    .subHeaderItem:hover {
+        color: #fcd800;
+        background: rgba(255,255,255,0.05);
+        padding-left: 15px;
+    }
+
+    .subHeaderItem::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: #fcd800;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .subHeaderItem:hover::before {
+        opacity: 1;
+    }
+
+    .dropdown {
+        position: static;
+    }
+
+    .dropdown-content {
+        display: none;
+        background: #2c2c2c;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 12px;
+        display: block;
+        color: #ffffff;
+        font-size: 14px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .dropdown-content a:hover {
+        background: #fcd800;
+        color: #100808;
+        transform: translateX(5px);
+    }
+
+    .mobile-menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #100808;
+        border: none;
+        font-size: 24px;
+        color: #fcd800;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .mobile-menu-button:hover {
+        background: #ffffff;
+        color: #100808;
+        transform: scale(1.05);
+    }
+
+    .mobile-menu-close {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: #1a1a1a;
+        cursor: pointer;
+        padding: 10px;
+        align-self: flex-start;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-menu-close.active {
+        display: block;
+    }
+
+    .mobile-menu-close:hover {
+        color: #ffffff;
+        transform: rotate(90deg);
+    }
+
+    /* Overlay for better focus on menu */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}

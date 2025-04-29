@@ -1,0 +1,137 @@
+img {
+    width: 30px;
+}
+
+.header {
+    background-color: #100808;
+    color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid white;
+    font-weight: bold;
+}
+
+.logo {
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #100808;
+}
+
+.logo img {
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.location {
+    opacity: 0.7;
+}
+
+.connectionWays {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.connectionWays span {
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.phoneLink {
+    color: #fff;
+    text-decoration: none;
+}
+
+.phoneLink:hover {
+    text-decoration: underline;
+}
+
+.whatsapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.whatsapp img {
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+
+@media (max-width: 600px) {
+    .header {
+        display: flex;
+        flex-direction: row; /* Горизонтальное расположение */
+        justify-content: space-between; /* Равномерное распределение */
+        align-items: center; /* Центрирование по вертикали */
+        padding: 10px 15px; /* Компактные отступы */
+        font-size: 14px; /* Уменьшенный, но читаемый шрифт */
+        flex-wrap: nowrap; /* Запрещаем перенос */
+        gap: 10px; /* Отступы между элементами */
+    }
+
+    .logo {
+        padding: 5px; /* Минимальный отступ */
+    }
+
+    .logo img {
+        height: 40px; /* Компактный логотип */
+        border-radius: 50%;
+    }
+
+    .location, .contact {
+        font-size: 12px; /* Меньший шрифт для компактности */
+        white-space: nowrap; /* Запрещаем перенос текста */
+    }
+
+    .connectionWays {
+        display: flex;
+        flex-direction: row; /* Телефон и WhatsApp горизонтально */
+        align-items: center;
+        gap: 8px; /* Компактный отступ */
+        font-size: 12px; /* Читаемый размер */
+    }
+
+    .phoneLink {
+        font-size: 14px; /* Компактный номер телефона */
+    }
+
+    .whatsapp img {
+        width: 20px; /* Уменьшенная иконка */
+        height: 20px;
+        margin-left: 5px; /* Минимальный отступ */
+
+    }
+}
+
+
+@media (min-width: 601px) {
+    .header {
+        justify-content: space-between;
+        padding: 10px 150px;
+        font-size: 18px;
+    }
+
+    .logo img {
+        height: 75px;
+    }
+
+    .connectionWays {
+        justify-content: center;
+        font-size: 18px;
+    }
+
+    .phoneLink {
+        font-size: 16px;
+    }
+
+    .whatsapp img {
+        width: 25px;
+        height: 25px;
+    }
+}
+

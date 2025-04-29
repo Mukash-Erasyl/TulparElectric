@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16914391771"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16914391771');
+    </script>
+
+    <!-- Фрагмент кода с номером телефона -->
+    <script>
+        gtag('config', 'AW-16914391771', {
+            'phone_conversion_number': '+7 700 088 84 71'
+        });
+    </script>
+    <title>Редактировать услугу</title>
+    <link rel="stylesheet" th:href="@{/css/adminPanel.css}">
+</head>
+<body>
+<h1>Редактирование услуги</h1>
+
+<form th:action="@{'/admin-panel/edit/' + ${service.id}}" th:object="${service}" method="post" enctype="multipart/form-data">
+    <label>Название:</label>
+    <input type="text" th:field="*{serviceName}" required/><br/>
+
+    <label>Описание:</label>
+    <textarea th:field="*{serviceDescription}" required></textarea><br/>
+
+    <label>Категория:</label>
+    <select th:field="*{serviceCategory}">
+        <option value="INSTALLATION">Монтаж</option>
+        <option value="REPAIR">Ремонт</option>
+        <option value="MAINTENANCE">Обслуживание</option>
+        <option value="CONSULTATION">Консультация</option>
+    </select><br/>
+
+    <label>Текущее изображение:</label><br/>
+    <img th:src="@{${service.serviceImage}}" alt="Превью" style="max-width: 250px; border-radius: 8px; margin-bottom: 15px;"><br/>
+    <p>Название услуги: <span th:text="${service.serviceImage}"></span></p>
+    <label>Загрузить новое изображение (необязательно):</label>
+    <input type="file" name="imageFile" accept="image/*"/><br/>
+
+    <button type="submit">Сохранить изменения</button>
+</form>
+
+<a th:href="@{/admin-panel}">🔙 Назад</a>
+</body>
+</html>

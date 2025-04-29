@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16914391771"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16914391771');
+    </script>
+
+    <!-- Фрагмент кода с номером телефона -->
+    <script>
+        gtag('config', 'AW-16914391771', {
+            'phone_conversion_number': '+7 707 363 0677'
+        });
+    </script>
+    <title th:text="${service.serviceName}">Детали</title>
+    <link rel="stylesheet" th:href="@{/css/serviceDetail.css}">
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${service.serviceName}">Название</h1>
+    <img th:src="@{${service.serviceImage}}" alt="Изображение" style="max-width: 400px; border-radius: 10px;">
+    <p th:text="${service.serviceDescription}">Описание</p>
+    <a href="tel:+77073630677" class="callButton">📞 Позвонить</a><br><br>
+    <a th:href="@{/}">⬅ Назад</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16914391771"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16914391771');
+    </script>
+
+    <!-- Фрагмент кода с номером телефона -->
+    <script>
+        gtag('config', 'AW-16914391771', {
+            'phone_conversion_number': '+7 707 363 0677'
+        });
+    </script>
+    <title>Обновление услуг</title>
+    <link rel="stylesheet" th:href="@{/css/adminPanel.css}">
+</head>
+<body>
+<h1>Редактирование услуг</h1>
+
+<ul>
+    <li th:each="s : ${services}">
+        <span th:text="${s.serviceName}">Название</span>
+        — <a th:href="@{/admin-panel/edit/{id}(id=${s.id})}">✏️ Редактировать</a>
+    </li>
+</ul>
+
+<a th:href="@{/admin-panel}">🔙 Назад</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+
+.testimonials {
+    padding: 40px 20px;
+    background-color: #fdfdfd;
+    color: #222;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #222;
+}
+
+.testimonialsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.testimonialItem {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.testimonialItem img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+}
+
+.testimonialName {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.testimonialProject {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.testimonialText {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    text-align: justify;
+}

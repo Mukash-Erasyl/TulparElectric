@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16914391771"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16914391771');
+    </script>
+
+    <!-- Фрагмент кода с номером телефона -->
+    <script>
+        gtag('config', 'AW-16914391771', {
+            'phone_conversion_number': '+7 707 363 0677'
+        });
+    </script>
+    <title>Создать новую услугу</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #100808;
+            color: #ffffff;
+            box-sizing: border-box;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #fcd800;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .admin-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .admin-links a {
+            background-color: #fcd800;
+            color: #100808;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: fit-content;
+            font-size: 18px;
+        }
+
+        .admin-links a:hover {
+            background-color: #100808;
+            color: #ffffff;
+            border: 1px solid #fcd800;
+        }
+
+        /* === Форма создания === */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 600px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fcd800;
+        }
+
+        input[type="text"],
+        textarea,
+        select,
+        input[type="file"] {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: #fcd800;
+            color: #100808;
+            padding: 14px 28px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e0b800;
+        }
+
+        a {
+            color: #fcd800;
+            text-decoration: underline;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Создание новой услуги</h1>
+
+<form th:action="@{/admin-panel/create}" th:object="${service}" method="post" enctype="multipart/form-data">
+    <label>Название:</label>
+    <input type="text" th:field="*{serviceName}" required/><br/>
+
+    <label>Описание:</label>
+    <textarea th:field="*{serviceDescription}" required></textarea><br/>
+
+    <label>Категория:</label>
+    <select th:field="*{serviceCategory}">
+        <option value="INSTALLATION">Монтаж</option>
+        <option value="REPAIR">Ремонт</option>
+        <option value="MAINTENANCE">Обслуживание</option>
+        <option value="CONSULTATION">Консультация</option>
+    </select><br/>
+
+    <label>Изображение:</label>
+    <input type="file" name="imageFile" accept="image/*" required/><br/>
+
+    <button type="submit">Создать</button>
+</form>
+
+<a th:href="@{/admin-panel}">🔙 Назад</a>
+</body>
+</html>

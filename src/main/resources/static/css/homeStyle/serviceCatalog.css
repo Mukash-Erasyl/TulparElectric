@@ -1,0 +1,227 @@
+/* Common styles for both desktop and mobile */
+.serviceCatalog {
+    border-bottom: 2px solid white;
+}
+
+.catalogHeader {
+    text-align: center;
+    color: white;
+}
+
+.catalogHeader h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.carousel-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: black;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.carousel-card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.carousel-card h3 {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.carousel-card p {
+    font-size: 14px;
+    color: black;
+}
+
+.detailsLink {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #fcd800;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.detailsLink:hover {
+    background-color: #100808;
+    color: white;
+}
+
+.carousel-btn {
+    background-color: #fcd800;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.carousel-btn:hover {
+    background-color: #e0b800;
+    transform: scale(1.1);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .catalogHeader {
+        margin-bottom: 30px;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 60px auto;
+        overflow: hidden;
+    }
+
+    .carousel-track-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.6s ease;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .carousel-card {
+        flex: 0 0 33.33%;
+        margin: 0 15px;
+        transform: scale(0.85);
+        opacity: 0.5;
+    }
+
+    .carousel-card.active {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    .carousel-card img {
+        height: 250px;
+    }
+
+    .carousel-card p {
+        height: 60px;
+        overflow: hidden;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        padding: 12px;
+        z-index: 5;
+    }
+
+    .carousel-btn.left {
+        left: 0;
+    }
+
+    .carousel-btn.right {
+        right: 0;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .catalogHeader {
+        margin-bottom: 12px;
+        padding: 0 10px;
+    }
+
+    .catalogHeader h1 {
+        font-size: 16px;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 85%;
+        margin: 10px auto;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .carousel-track-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.4s ease;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .carousel-card {
+        flex: 0 0 100%;
+        margin: 0 15px;
+        transform: scale(1);
+        opacity: 1;
+        border-radius: 8px;
+        padding: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .carousel-card img {
+        height: 125px;
+    }
+
+    .carousel-card h3 {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .carousel-card p {
+        height: auto;
+        max-height: 42px;
+        overflow: hidden;
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    .detailsLink {
+        padding: 4px 8px;
+        font-size: 11px;
+        margin-top: 5px;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 42px; /* Половина высоты изображения (85px / 2) */
+        padding: 8px;
+        font-size: 14px;
+        background-color: rgba(252, 216, 0, 1);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        z-index: 10;
+        opacity: 0.95;
+    }
+
+    .carousel-btn.left {
+        left: 8px;
+    }
+
+    .carousel-btn.right {
+        right: 8px;
+    }
+}

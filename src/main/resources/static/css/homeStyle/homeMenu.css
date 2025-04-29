@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #100808;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.footer {
+    background-color: #100808;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/*nav ul {*/
+/*    list-style-type: none;*/
+/*    padding: 0;*/
+/*    display: flex;*/
+/*    gap: 20px;*/
+/*}*/
+
+/*nav ul li {*/
+/*    margin-right: 20px;*/
+/*}*/
+
+/*nav ul li a {*/
+/*    text-decoration: none;*/
+/*    color: #100808;*/
+/*    transition: color 0.3s, background-color 0.3s;*/
+/*    padding: 10px 20px;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*nav ul li a:hover {*/
+/*    color: #ffffff;*/
+/*    background-color: #100808;*/
+/*}*/
+
+/*.contact {*/
+/*    font-size: 14px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.location{*/
+/*    font-size: 12px;*/
+/*    opacity: 0.8;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+.footerInner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.footerLogo img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.footerAbout {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.footerContacts p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.footerContacts a {
+    color: #fcd800;
+    text-decoration: none;
+}
+
+.footerBottom {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #888;
+}
+
+
+/* Кнопка по центру */
+.open-button {
+    color: #fff;
+    padding: 13.5px 27px; /* уменьшено на 10% */
+    font-size: 16.2px; /* уменьшено на 10% */
+    border: none;
+    border-radius: 9px; /* уменьшено на 10% */
+    cursor: pointer;
+    box-shadow: 0 3.6px 9px rgba(0, 0, 0, 0.2); /* уменьшено на 10% */
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Модалка */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Контент модалки (уменьшен на 10%) */
+.modal-content {
+    background-color: #fff;
+    margin: 8% auto; /* уменьшено на 10% */
+    padding: 16px 25px; /* уменьшено на 10% */
+    border-radius: 10.8px; /* уменьшено на 10% */
+    width: 90%;
+    max-width: 400px; /* уменьшено на 10% */
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+/* Кнопка закрытия */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 25.2px; /* уменьшено на 10% */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Стили формы (уменьшены на 10%) */
+.modal-content form input,
+.modal-content form textarea {
+    width: 100%;
+    padding: 8px; /* уменьшено на 10% */
+    margin: 8px 0; /* уменьшено на 10% */
+    border: 1px solid #ccc;
+    border-radius: 5.4px; /* уменьшено на 10% */
+    font-size: 14.4px; /* уменьшено на 10% */
+}
+
+.modal-content form button {
+    background-color: #003366;
+    color: white;
+    padding: 9px 18px; /* уменьшено на 10% */
+    border: none;
+    border-radius: 7.2px; /* уменьшено на 10% */
+    cursor: pointer;
+    font-size: 14.4px; /* уменьшено на 10% */
+    transition: background-color 0.3s;
+}
+
+.quickButtonsContainer {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.openQuickBtn {
+    width: 60px;
+    height: 60px;
+    background-color: #003366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.openQuickBtn img {
+    width: 30px;
+    height: 30px;
+}
+
+.quickBtn {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.quickBtn div {
+    width: 50px;
+    height: 50px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.quickBtn div:hover {
+    transform: scale(1.1);
+}
+
+.quickBtn img {
+    width: 28px;
+    height: 28px;
+}
+
+
+
+
+
+
+

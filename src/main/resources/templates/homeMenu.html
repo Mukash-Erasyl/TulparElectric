@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16914391771"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16914391771');
+    </script>
+
+    <script>
+        gtag('config', 'AW-16914391771', {
+            'phone_conversion_number': '+7 700 088 84 71'
+        });
+    </script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электрик Срочно</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/homeMenu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/subHeader.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/content.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/serviceCatalog.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/callBlock.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/orderStages.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/whyChooseUs.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/homeStyle/testimonials.css}">
+
+
+
+
+
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="logo">
+            <img th:src="@{/images/logo.webp}" alt="Логотип">
+        </div>
+        <div class="location">
+            г. Алматы
+        </div>
+        <div class="contact">
+            Контакты
+        </div>
+        <div class="connectionWays sendEmailTrigger">
+            <div class="whatsapp">
+                <a href="https://wa.me/77000888471" target="_blank">
+                    <img th:src="@{/images/whatsappIcon.png}" alt="WhatsApp">
+                </a>
+            </div>
+            <a href="tel:+77000888471" class="phoneLink">
+                <span>+7 700 088 84 71</span>
+            </a>
+        </div>
+        <button class="mobile-menu-button">☰</button>
+    </div>
+
+
+    <div class="subHeader">
+        <button class="mobile-menu-close">✕</button>
+        <div class="subHeaderItem" id="main">Главное</div>
+        <div class="subHeaderItem dropdown">
+            Услуги по электрике
+            <div class="dropdown-content">
+                <a th:each="s, stat : ${services}"
+                   th:if="${stat.index} < 8"
+                   th:href="@{'/services/' + ${s.id}}"
+                   th:text="${s.serviceName}">
+                    Название
+                </a>
+            </div>
+        </div>
+        <div class="subHeaderItem" id="tips">Советы экспертов</div>
+        <div class="subHeaderItem" id="cooperation">Сотрудничество</div>
+        <div class="subHeaderItem" id="reviews">Отзывы</div>
+        <div class="subHeaderItem" id="chooseUs">Почему стоит выбрать нас?</div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="introducingBlog">
+            <div class="blogContent">
+                <div class="blogInfo">
+                    <h2>Услуги электрика в Алматы <br/><span>Электрик Срочно</span></h2>
+                </div>
+                <div class="additionalInfo">
+                    <p>Мы предоставляем полный спектр услуг: монтаж и ремонт электропроводки, установка освещения,
+                        устранение коротких замыканий, установка щитков и многое другое. Каждый проект выполняется с
+                        максимальной точностью и заботой о безопасности!</p>
+                </div>
+                <div class="additionalInfoList">
+                    <div>
+                        <img th:src="@{/images/hotlineIcon.png}" alt="Логотип">
+                        <span>Работаем 24/7</span>
+                    </div>
+                    <div>
+                        <img th:src="@{/images/guaranteeIcon.png}" alt="Логотип">
+                        <span>Гарантия на все работы 100%</span>
+                    </div>
+                    <div>
+                        <img th:src="@{/images/solderingIcon.png}" alt="Логотип">
+                        <span>Бесплатная диагностика</span>
+                    </div>
+                    <div>
+                        <img th:src="@{/images/workerIcon.png}" alt="Логотип">
+                        <span>Специалисты с опытом свыше 10 лет!</span>
+                    </div>
+                    <div>
+                        <img th:src="@{/images/complexIcon.png}" alt="Логотип">
+                        <span>Выполняем работу любой сложности</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="applicationBlock">
+                <h3>Оставьте заявку</h3>
+                <p>Мы доступны 24/7, приедем к вам за 30 минут! Не откладывайте решение важных вопросов, позвоните или
+                    оставьте заявку прямо сейчас.</p>
+                <button id="openModalBtn" class="open-button">Оставить заявку</button>
+            </div>
+        </div>
+
+
+        <div class="serviceCatalog">
+            <div class="catalogHeader">
+                <h1>Популярные услуги которые мы выполняем по электрике</h1>
+            </div>
+
+            <div class="carousel-container">
+                <button class="carousel-btn left">⬅</button>
+                <div class="carousel-track-container">
+                    <ul class="carousel-track" id="carouselTrack">
+                        <li class="carousel-card" th:each="s : ${services}">
+                            <img th:src="@{${s.serviceImage}}" alt="Услуга">
+                            <h3 th:text="${s.serviceName}">Название</h3>
+                            <p th:text="${s.serviceDescription}">Описание</p>
+                            <a th:href="@{'/services/' + ${s.id}}" class="detailsLink">Подробнее</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-btn right">➡</button>
+            </div>
+        </div>
+
+        <div class="callBlock">
+            <div class="callBlockTextTitle">
+                Свяжитесь с нами, и мы быстро приведем вашу электросистему в порядок — надежно и без лишних хлопот!
+            </div>
+            <a class="whatsappBtn sendEmailTrigger" href="https://wa.me/77000888471" target="_blank">
+                WhatsApp
+            </a>
+            <a class="phoneBtn sendEmailTrigger" href="tel:+77000888471">Позвонить: +7 707 363 0677</a>
+        </div>
+
+
+        <div class="orderStages">
+            <div class="orderStageTitleText">Простой способ заказать услуги электрика.</div>
+            <div class="orderStageItems">
+
+                <div class="orderStageItem">
+                    <div class="stageItemHeader">
+                        <div class="stageItemNumber">1</div>
+                        <div class="stageItemLogo"><img th:src="@{/images/callUs.png}" alt="Логотип"></div>
+                    </div>
+                    <div class="stageItemTexts">
+                        <div class="stageItemText">Свяжитесь с нами</div>
+                        <div class="stageItemText">Позвоните или напишите в WhatsApp — мы всегда на связи 24/7.</div>
+                    </div>
+                </div>
+
+                <div class="orderStageItem">
+                    <div class="stageItemHeader">
+                        <div class="stageItemNumber">2</div>
+                        <div class="stageItemLogo"><img th:src="@{/images/electricitySignIcon.png}" alt="Логотип"></div>
+                    </div>
+                    <div class="stageItemTexts">
+                        <div class="stageItemText">Опишите проблему</div>
+                        <div class="stageItemText">Расскажите, что не работает или что нужно установить. Мы бесплатно
+                            проконсультируем.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="orderStageItem">
+                    <div class="stageItemHeader">
+                        <div class="stageItemNumber">3</div>
+                        <div class="stageItemLogo"><img th:src="@{/images/electricianIcon.png}" alt="Логотип"></div>
+                    </div>
+                    <div class="stageItemTexts">
+                        <div class="stageItemText">Приезд мастера</div>
+                        <div class="stageItemText">Специалист приедет в течение 30 минут и проведёт диагностику.</div>
+                    </div>
+                </div>
+
+                <div class="orderStageItem">
+                    <div class="stageItemHeader">
+                        <div class="stageItemNumber">4</div>
+                        <div class="stageItemLogo"><img th:src="@{/images/guaranteeIcon.png}" alt="Логотип"></div>
+                    </div>
+                    <div class="stageItemTexts">
+                        <div class="stageItemText">Работа и гарантия</div>
+                        <div class="stageItemText">Выполним ремонт или монтаж. На все работы даём 100% гарантию.</div>
+                    </div>
+                </div>
+
+                <div class="orderStageItem">
+                    <div class="stageItemHeader">
+                        <div class="stageItemNumber">5</div>
+                        <div class="stageItemLogo"><img th:src="@{/images/relaxIcon.png}" alt="Логотип"></div>
+                    </div>
+                    <div class="stageItemTexts">
+                        <div class="stageItemText">Спокойствие и безопасность</div>
+                        <div class="stageItemText">Вы отдыхаете — мы делаем всё быстро, аккуратно и безопасно.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="whyChooseUs">
+            <h2>Почему клиенты выбирают нас?</h2>
+            <div class="reasonsGrid">
+                <div class="reasonItem">
+                    <h3>Оперативность</h3>
+                    <p>Выезд электрика в течение 30 минут после звонка. Диагностика и ремонт — сразу на месте.</p>
+                </div>
+                <div class="reasonItem">
+                    <h3>Профессионализм</h3>
+                    <p>Команда опытных специалистов с высшим образованием. Работаем без посредников — доступные
+                        цены.</p>
+                </div>
+                <div class="reasonItem">
+                    <h3>Качество и безопасность</h3>
+                    <p>Используем сертифицированные материалы и современное оборудование. Всё строго по стандартам.</p>
+                </div>
+                <div class="reasonItem">
+                    <h3>Широкий спектр услуг</h3>
+                    <p>От простой замены розетки до полной электропроводки. Любые работы — качественно и точно.</p>
+                </div>
+                <div class="reasonItem">
+                    <h3>Прозрачность</h3>
+                    <p>Расчет стоимости до начала работ. Никаких скрытых платежей.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="testimonials">
+            <h2>Отзывы клиентов</h2>
+            <div class="testimonialsGrid">
+
+                <div class="testimonialItem">
+                    <div class="testimonialName">Нурлан Ахметов</div>
+                    <div class="testimonialProject">Замена электрического щитка</div>
+                    <div class="testimonialText">
+                        Уже не первый раз обращаюсь к ребятам — раньше помогали с сантехникой, теперь понадобилось
+                        заменить старый электрощиток. Видел их объявления и на OLX, но знал и так, что делают всё на
+                        совесть. Как всегда — приехали вовремя, всё объяснили, аккуратно сняли старое, поставили новый
+                        щит, подписали автоматы. Теперь всё понятно и безопасно. Спасибо огромное, доверяю им полностью
+                        👍
+                    </div>
+                </div>
+
+                <div class="testimonialItem">
+                    <div class="testimonialName">Александр Куликов</div>
+                    <div class="testimonialProject">Прокладка кабелей в частном доме</div>
+                    <div class="testimonialText">
+                        Делали ремонт в доме, нужно было заново проложить всю электрику — от розеток до слаботочки.
+                        Обратился в эту компанию по рекомендации, и ни разу не пожалел. Мастер всё подробно объяснил,
+                        помог с выбором кабелей, щитка, розеток. Работал аккуратно, без суеты, всё делал по уму. Даже
+                        штробы оставил чистыми, мусор после себя убрал. Честно — такое отношение сейчас редкость.
+                        Спасибо за качественную работу и уважение к клиенту!
+                    </div>
+                </div>
+
+
+                <div class="testimonialItem">
+                    <div class="testimonialName">Расул Аяшев</div>
+                    <div class="testimonialProject">Работы по электрике в квартире</div>
+                    <div class="testimonialText">
+                        Сервис на высоте! 🔥 Нужно было сделать всё для техники и света в новой квартире. 💡 Мастер
+                        приехал вовремя ⏰, всё выполнил аккуратно и продуманно, учёл все мои пожелания. 😊 Очень
+                        порадовало, что не пришлось ничего объяснять дважды — видно, что человек опытный 👨‍🔧. Огромное
+                        спасибо за подход и спокойствие в работе 🙏🏼 — теперь только к вам! 🥰🙌
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+    </div>
+
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="/send-email" method="post">
+                <input type="text" name="fullName" placeholder="Ваше имя и фамилия" required><br>
+                <textarea name="body" placeholder="Опишите, какую услугу хотите получить" required></textarea><br>
+                <button type="submit">Отправить заявку</button>
+            </form>
+            <p th:text="${message}" style="color: green;"></p>
+            <p th:text="${error}" style="color: red;"></p>
+        </div>
+    </div>
+
+    <!-- Быстрые кнопки -->
+    <div class="quickButtonsContainer">
+        <!-- Кнопка "Открыть" -->
+        <div class="openQuickBtn" id="quickBtnToggle">
+            <img th:src="@{/images/chatIcon.png}" alt="Чат">
+        </div>
+
+        <!-- Всплывающие кнопки -->
+        <div class="quickBtn" id="quickBtnGroup">
+            <div class="whatsappQuickBtn sendEmailTrigger">
+                <a href="https://wa.me/77000888471" target="_blank">
+                    <img th:src="@{/images/whatsappGoldenIcon.png}" alt="WhatsApp">
+                </a>
+            </div>
+            <div class="callQuickBtn sendEmailTrigger">
+                <a href="tel:+77000888471">
+                    <img th:src="@{/images/callIcon.png}" alt="Звонок">
+                </a>
+            </div>
+            <div class="emailQuickBtn sendEmailTrigger" id="openEmailModal">
+                <img th:src="@{/images/emailIcon.png}" alt="Email">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="footerInner">
+            <div class="footerLogo">
+                <img src="/images/logo.webp" alt="Логотип">
+            </div>
+            <p class="footerAbout">
+                Наша команда — это специалисты с опытом и человеческим подходом. Мы делаем не просто работу, а решаем задачи клиентов с заботой и качеством.
+            </p>
+            <div class="footerContacts">
+                <p><strong>Телефон:</strong> <a href="tel:+77000888471">+7 707 363 0677</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/77000888471" target="_blank">Написать в WhatsApp</a></p>
+            </div>
+        </div>
+        <div class="footerBottom">
+            © 2025, Все права защищены
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    const track = document.getElementById('carouselTrack');
+    const cards = track.querySelectorAll('.carousel-card');
+    const leftBtn = document.querySelector('.carousel-btn.left');
+    const rightBtn = document.querySelector('.carousel-btn.right');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const cardWidth = cards[0].getBoundingClientRect().width + (window.innerWidth <= 767 ? 30 : 30); // Учитываем margin
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        cards.forEach((card, index) => {
+            card.classList.remove('active');
+            if (index === currentIndex) {
+                card.classList.add('active');
+            }
+        });
+    }
+
+    leftBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    rightBtn.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    // Swipe support
+    let startX = 0;
+    let isDragging = false;
+
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const currentX = e.touches[0].clientX;
+        const diffX = startX - currentX;
+        if (Math.abs(diffX) > 50) {
+            if (diffX > 0 && currentIndex < cards.length - 1) {
+                currentIndex++;
+                updateCarousel();
+                isDragging = false;
+            } else if (diffX < 0 && currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+                isDragging = false;
+            }
+        }
+    });
+
+    track.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+    // Adjust carousel on window resize
+    window.addEventListener('resize', updateCarousel);
+
+    // Initial positioning
+    updateCarousel();
+</script>
+
+
+
+<script>
+    document.getElementById('cooperation').addEventListener('click', function() {
+        window.location.href = '/cooperation';  // Здесь '/cooperation' — это путь к странице сотрудничества
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const reviewsButton = document.getElementById('reviews');
+        const chooseUsButton = document.getElementById('chooseUs');
+        const testimonialsSection = document.querySelector('.testimonials');
+        const whyChooseUsSection = document.querySelector('.whyChooseUs');
+
+        reviewsButton.addEventListener('click', function() {
+            testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        chooseUsButton.addEventListener('click', function() {
+            whyChooseUsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+</script>
+
+<script>
+    const modal = document.getElementById("emailModal");
+    const btn = document.getElementById("openModalBtn");
+    const span = document.querySelector(".close");
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
+<script>
+    document.querySelectorAll('.sendEmailTrigger').forEach(el => {
+        el.addEventListener('click', function () {
+            fetch('/send-template-email', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Письмо отправлено!');
+                    } else {
+                        console.error('Ошибка');
+                    }
+                })
+                .catch(err => console.error('Сбой:', err));
+        });
+    });
+</script>
+
+<script>
+    const quickBtnToggle = document.getElementById('quickBtnToggle');
+    const quickBtnGroup = document.getElementById('quickBtnGroup');
+    const openEmailModal = document.getElementById('openEmailModal');
+
+    let isQuickOpen = false;
+
+    quickBtnToggle.addEventListener('click', () => {
+        isQuickOpen = !isQuickOpen;
+        quickBtnGroup.style.display = isQuickOpen ? 'flex' : 'none';
+    });
+
+    openEmailModal.addEventListener('click', () => {
+        document.getElementById('emailModal').style.display = 'block';
+        quickBtnGroup.style.display = 'none';
+        isQuickOpen = false;
+    });
+</script>
+
+
+<script>
+    function closeMobileMenu() {
+        const subHeader = document.querySelector('.subHeader');
+        const closeButton = document.querySelector('.mobile-menu-close');
+        const overlay = document.querySelector('.overlay');
+        subHeader.classList.remove('active');
+        closeButton.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+
+    document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+        const subHeader = document.querySelector('.subHeader');
+        const closeButton = document.querySelector('.mobile-menu-close');
+        const overlay = document.querySelector('.overlay');
+        subHeader.classList.add('active');
+        closeButton.classList.add('active');
+        overlay.classList.add('active');
+    });
+
+    document.querySelector('.mobile-menu-close').addEventListener('click', closeMobileMenu);
+
+    document.querySelector('.overlay').addEventListener('click', closeMobileMenu);
+
+    document.querySelectorAll('.subHeaderItem').forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (window.innerWidth <= 767) {
+                if (this.classList.contains('dropdown')) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                } else {
+                    closeMobileMenu();
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll('.dropdown-content a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 767) {
+                closeMobileMenu();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

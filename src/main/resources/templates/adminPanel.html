@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16914391771"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16914391771');
+        </script>
+
+        <!-- Фрагмент кода с номером телефона -->
+        <script>
+            gtag('config', 'AW-16914391771', {
+                'phone_conversion_number': '+7 707 363 0677'
+            });
+        </script>
+    <title>Админ-панель</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #100808;
+            color: #ffffff;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #fcd800;
+        }
+
+        .admin-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .admin-links a {
+            background-color: #fcd800;
+            color: #100808;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: fit-content;
+            font-size: 18px;
+        }
+
+        .admin-links a:hover {
+            background-color: #100808;
+            color: #ffffff;
+            border: 1px solid #fcd800;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Административная панель</h1>
+
+<div class="admin-links">
+    <a th:href="@{/admin-panel/create}">➕ Создать новую услугу</a>
+    <a th:href="@{/admin-panel/update}">✏️ Обновить услугу</a>
+    <a th:href="@{/admin-panel/delete}">❌ Удалить услугу</a>
+</div>
+</body>
+</html>

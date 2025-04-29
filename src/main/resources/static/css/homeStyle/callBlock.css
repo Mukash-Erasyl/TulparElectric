@@ -1,0 +1,90 @@
+/* Common styles for both desktop and mobile */
+.callBlock {
+    background-image: url('../../images/callBlockBackground.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.callBlockTextTitle {
+    font-weight: bold;
+    text-align: justify;
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsappBtn, .phoneBtn {
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+    transition: transform 0.2s;
+    text-align: justify;
+    margin-top: 50px;
+}
+
+.whatsappBtn {
+    background-color: #25D366;
+}
+
+.phoneBtn {
+    background-color: #007BFF;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .callBlock {
+        padding: 40px;
+        text-align: center;
+    }
+
+    .callBlockTextTitle {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .whatsappBtn, .phoneBtn {
+        margin: 50px;
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .callBlock {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .callBlockTextTitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    .whatsappBtn, .phoneBtn {
+        margin: 15px 10px;
+        padding: 10px 15px;
+        font-size: 14px;
+        width: calc(50% - 30px); /* Учитываем отступы */
+        box-sizing: border-box;
+    }
+}
